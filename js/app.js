@@ -14,16 +14,40 @@ function validate(){
     errorMessage.innerTex = "";
     if(firstName.length<3){
         document.getElementById("errorMessage").classList.remove("hidden");
-        errorMessage.innerText = "First name should be atleast 3 characters.."
+        errorMessage.innerText = "First name should be atleast 3 characters..."
     }
-    if(lastName.length<3){
+    else if(lastName.length<3){
         document.getElementById("errorMessage").classList.remove("hidden");
-        errorMessage.innerText += "\nLast name should be atleast 3 characters.."
+        errorMessage.innerText = "\nLast name should be atleast 3 characters..."
+    }else if(!isValidPhone(phoneNumber)){
+        document.getElementById("errorMessage").classList.remove("hidden");
+        errorMessage.innerText = "\nInvalid phone number... Number should be of 10 digits and without country code...";
+    }else if(!isValidEmail(emailAddress)){
+        document.getElementById("errorMessage").classList.remove("hidden");
+        errorMessage.innerText = "\nInvalid email address... It must be a gmail account...";
+    }else if(password!=confirmPassword){
+        document.getElementById("errorMessage").classList.remove("hidden");
+        errorMessage.innerText = "\nPassword and confirm password should match...";
+    }else{
+        document.getElementById("errorMessage").classList.add("hidden");   
     }
-
-
-
 }
+
+function isValidPhone(number){
+    // console.log(number)
+    if (Number.isInteger(+number) && (number.length==10)){
+        return true;
+    }
+    return false;
+}
+function isValidEmail(email){
+    console.log(email)
+    if (email.endsWith("@gmail.com")){
+        return true;
+    }
+    return false;
+}
+
 registerButton.addEventListener("click", function(e){
     e.preventDefault();
     validate();
