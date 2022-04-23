@@ -20,13 +20,13 @@
                 <div class="card-body p-4 p-md-5">
                   <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Registration Form</h3>
                   <p class="errorMessage hidden" id="errorMessage"></p>
-                  <form autocomplete="off">
+                  <form method="POST" action="insert.php" autocomplete="off">
       
                     <div class="row">
                       <div class="col-md-6 mb-4">
       
                         <div class="form-outline">
-                          <input type="text" id="firstName" class="form-control form-control-lg" autocomplete="off" required/>
+                          <input type="text" id="firstName" name="firstName" class="form-control form-control-lg" autocomplete="off" required/>
                           <label class="form-label" for="firstName">First Name</label>
                         </div>
       
@@ -34,7 +34,7 @@
                       <div class="col-md-6 mb-4">
       
                         <div class="form-outline">
-                          <input type="text" id="lastName" class="form-control form-control-lg" required/>
+                          <input type="text" id="lastName" name="lastName" class="form-control form-control-lg" required/>
                           <label class="form-label" for="lastName">Last Name</label>
                         </div>
       
@@ -45,7 +45,7 @@
                         <div class="col-md-6 mb-4 pb-2">
       
                             <div class="form-outline">
-                              <input type="tel" id="phoneNumber" class="form-control form-control-lg"  required/>
+                              <input type="tel" id="phoneNumber" name="phoneNumber" class="form-control form-control-lg"  required/>
                               <label class="form-label" for="phoneNumber">Phone Number</label>
                             </div>
           
@@ -53,7 +53,7 @@
                           <div class="col-md-6 mb-4 pb-2">
       
                             <div class="form-outline">
-                              <input type="email" id="emailAddress" class="form-control form-control-lg"  required/>
+                              <input type="email" id="emailAddress" name="emailAddress" class="form-control form-control-lg"  required/>
                               <label class="form-label" for="emailAddress">Email</label>
                             </div>
           
@@ -95,8 +95,8 @@
                       <div class="col-md-6 mb-4 pb-2">
       
                         <div class="form-outline">
-                          <input type="file" id="ProfileImage" class="form-control form-control-lg"  required/>
-                          <label class="form-label" for="phoneNumber">Profile Image</label>
+                          <input type="file" id="ProfileImage" name="ProfileImage" class="form-control form-control-lg"  required/>
+                          <label class="form-label" for="ProfileImage">Profile Image</label>
                         </div>
       
                       </div>
@@ -108,7 +108,7 @@
                         <div class="col-md-6 mb-4 pb-2">
       
                             <div class="form-outline">
-                              <input type="password" id="password" class="form-control form-control-lg"  required/>
+                              <input type="password" id="password" name="password" class="form-control form-control-lg"  required/>
                               <label class="form-label" for="password">Password</label>
                             </div>
           
@@ -116,7 +116,7 @@
                           <div class="col-md-6 mb-4 pb-2">
       
                             <div class="form-outline">
-                              <input type="password" id="confirmPassword" class="form-control form-control-lg"  required/>
+                              <input type="password" id="confirmPassword" name="confirmPassword" class="form-control form-control-lg"  required/>
                               <label class="form-label" for="password">Confirm Password</label>
                             </div>
                           </div>
@@ -125,7 +125,7 @@
                     </div>
       
                     <div class="mt-1 pt-1">
-                      <button class="btn btn-primary btn-lg" type="submit" value="Register" id="register">Register</button>
+                      <input type="submit" class="btn btn-primary btn-lg" value="Register" id="register" name="register">
                     </div>
       
                   </form>

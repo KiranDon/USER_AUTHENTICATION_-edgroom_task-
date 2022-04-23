@@ -49,6 +49,6 @@ function isValidEmail(email){
 }
 
 registerButton.addEventListener("click", function(e){
-    e.preventDefault();
+    // e.preventDefault();
     validate();
 });
