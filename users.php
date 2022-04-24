@@ -24,59 +24,40 @@
         <th>Password</th>
       </tr>
 
-      <tr>
-        <td>Usha Kiran</td>
-        <td>Melastri</td>
-        <td>9182245303</td>
-        <td>ushakiran@gmail.com</td>
-        <td>Male</td>
-        <td>PassWorD</td>
-      </tr>
+      <?php 
+                include ("config.php");
 
-      <tr>
-        <td>Usha Kiran</td>
-        <td>Melastri</td>
-        <td>9182245303</td>
-        <td>ushakiran@gmail.com</td>
-        <td>Male</td>
-        <td>PassWorD</td>
-      </tr>
+                $query = mysqli_query($connection, "select * from users");
 
-      <tr>
-        <td>Usha Kiran</td>
-        <td>Melastri</td>
-        <td>9182245303</td>
-        <td>ushakiran@gmail.com</td>
-        <td>Male</td>
-        <td>PassWorD</td>
-      </tr>
+                while($rows = mysqli_fetch_assoc($query)){
+            ?>
 
-      <tr>
-        <td>Usha Kiran</td>
-        <td>Melastri</td>
-        <td>9182245303</td>
-        <td>ushakiran@gmail.com</td>
-        <td>Male</td>
-        <td>PassWorD</td>
-      </tr>
+                <tr>
+                  <td><?php echo $rows['firstName'] ?></td>
+                  <td><?php echo $rows['lastName'] ?></td>
+                  <td><?php echo $rows['phoneNumber'] ?></td>
+                  <td><?php echo $rows['emailAddress'] ?></td>
+                  <td><?php echo $rows['gender'] ?></td>
+                  <td><?php echo $rows['password'] ?></td>
+                    
+                    <!-- <td><a href="profile.php?user=<?php echo $rows['name'] ?>"><button class="button">Profile</button></a></td> -->
+                </tr>
 
-      <tr>
-        <td>Usha Kiran</td>
-        <td>Melastri</td>
-        <td>9182245303</td>
-        <td>ushakiran@gmail.com</td>
-        <td>Male</td>
-        <td>PassWorD</td>
-      </tr>
+            <?php
+                }
+            ?>
 
-      <tr>
+
+      <!-- <tr>
         <td>Usha Kiran</td>
         <td>Melastri</td>
         <td>9182245303</td>
         <td>ushakiran@gmail.com</td>
         <td>Male</td>
         <td>PassWorD</td>
-      </tr>
+      </tr> -->
+
+      
     </table>
     
 

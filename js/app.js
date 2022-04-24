@@ -52,3 +52,5 @@ registerButton.addEventListener("click", function(e){
     // e.preventDefault();
     validate();
 });
+
+
