@@ -60,9 +60,3 @@ a{
     top: 90%; 
 }
 
-.adminForm{
-    width: 50%;
-    border: 1px solid black;
-    display: flex;
-    flex-direction: column;
-}

@@ -20,7 +20,7 @@
                 <div class="card-body p-4 p-md-5">
                   <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Registration Form</h3>
                   <p class="errorMessage hidden" id="errorMessage"></p>
-                  <form method="POST" action="insert.php" autocomplete="off">
+                  <form method="POST" action="insert.php" onsubmit="return validate()"  autocomplete="off">
       
                     <div class="row">
                       <div class="col-md-6 mb-4">
