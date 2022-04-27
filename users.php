@@ -52,7 +52,8 @@
                   <td><?php echo $rows['gender'] ?></td>
                   <td><?php echo $rows['password'] ?></td>
                   <td><a href="edit.php?email=<?php echo $rows['emailAddress'] ?>"><button class="editButton" id="editButton" name=<?php echo $rows['emailAddress'] ?>>EDIT 🖊</button></a></td>
-                  <td><button class="deleteButton" id="deleteButton" name=<?php echo $rows['emailAddress'] ?>>DELETE ❌</button></td>
+                  <td><a href="delete.php?email=<?php echo $rows['emailAddress'] ?>"><button class="deleteButton" id="deleteButton" name=<?php echo $rows['emailAddress'] ?>>DELETE ❌</button></a></td>
+                  <!-- <td><button class="deleteButton" id="deleteButton" name=<?php echo $rows['emailAddress'] ?>>DELETE ❌</button></td> -->
                     
                     <!-- <td><a href="profile.php?user=<?php echo $rows['name'] ?>"><button class="button">Profile</button></a></td> -->
                 </tr>
