@@ -17,16 +17,14 @@ echo $firstName;
 
 $updateUser = mysqli_query($connection, "update users set firstName='$firstName', lastName='$lastName', phoneNumber='$phoneNumber', gender='$gender', password='$password' where emailAddress='$emailAddress'");
 if(isset($updateUser)){
-  header("Location:users.php");
   echo '<script language="javascript">';
-  echo 'alert("Successfully Updated");';
+  echo 'if(confirm("Details updated successfully...")==true){';
+  echo 'location.href="users.php";}';
   echo '</script>';
-  echo("yayyyy...");
 }else{
-  echo $updateUser->error;
-  echo("Faaaaaaaaaaak");
   echo '<script language="javascript">';
-  echo 'alert("Something is wrong...");';
+  echo 'if(confirm("something is wrong...")==true){';
+  echo 'location.href="users.php";}';
   echo '</script>';
 }
 ?>

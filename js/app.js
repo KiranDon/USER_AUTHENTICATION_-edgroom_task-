@@ -1,3 +1,4 @@
+// alert("hjvj");
 let registerButton = document.getElementById("register");
 let errorMessage = document.getElementById("errorMessage");
 function validate(){
@@ -8,7 +9,8 @@ function validate(){
     let gender = document.querySelector('.genderInput:checked').value;
     let password = document.getElementById("password").value;
     let confirmPassword = document.getElementById("confirmPassword").value;
-
+    alert(password);
+    alert(typeof(password));
     console.log(firstName, lastName, phoneNumber, emailAddress, gender, password, confirmPassword)
 
     errorMessage.innerTex = "";
@@ -29,6 +31,10 @@ function validate(){
         document.getElementById("errorMessage").classList.remove("hidden");
         errorMessage.innerText = "\nInvalid email address... It must be a gmail account...";
         return false;
+    }else if(!isValidPassword(password)){
+        document.getElementById("errorMessage").classList.remove("hidden");
+        errorMessage.innerText = "\nPassword should contain at least 8 characters including 1 special chacter, 1 uppercase and 1 lower case letter...";
+        return false;
     }else if(password!=confirmPassword){
         document.getElementById("errorMessage").classList.remove("hidden");
         errorMessage.innerText = "\nPassword and confirm password should match...";
@@ -37,6 +43,11 @@ function validate(){
         document.getElementById("errorMessage").classList.add("hidden"); 
         return true;  
     }
+}
+
+function isValidPassword(password){
+    let re = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+    return re.test(password);
 }
 
 function isValidPhone(number){

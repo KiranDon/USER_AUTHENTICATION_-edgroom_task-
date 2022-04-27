@@ -11,15 +11,21 @@ $password = $_POST['password'];
 $insertUser = mysqli_query($connection, "insert into users values('$firstName', '$lastName', '$phoneNumber', '$emailAddress', '$gender', '$password')");
 if($insertUser){
   echo '<script language="javascript">';
-  echo 'alert("Successfully Registered");';
+  echo 'if(confirm("Registration Successful...")==true){';
+  echo 'location.href="login.php";}';
   echo '</script>';
-  echo("yayyyy...");
+  // echo("yayyyy...");
+  // usleep(3000000);
   // header("Location:login.php");
 }else{
-  echo $insertUser->error;
-  echo("Faaaaaaaaaaak");
+  // echo $insertUser->error;
+  // echo("Faaaaaaaaaaak");
+  // echo '<script language="javascript">';
+  // echo 'alert("Something is wrong...");';
+  // echo '</script>';
   echo '<script language="javascript">';
-  echo 'alert("Something is wrong...");';
+  echo 'if(confirm("Something is wrong...")==true){';
+  echo 'location.href="register.php";}';
   echo '</script>';
 }
 ?>

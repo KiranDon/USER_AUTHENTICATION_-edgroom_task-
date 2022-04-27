@@ -10,15 +10,13 @@ $email = $parameters['email'];
 $deleteUser = mysqli_query($connection, "delete from users where emailAddress='$email'");
 if(isset($deleteUser)){
   echo '<script language="javascript">';
-  echo 'alert("Successfully deleted");';
+  echo 'if(confirm("User has been removed from database...")==true){';
+  echo 'location.href="users.php";}';
   echo '</script>';
-  echo("yayyyy...");
-  header("Location:users.php");
 }else{
-  echo $deleteUser->error;
-  echo("Faaaaaaaaaaak");
   echo '<script language="javascript">';
-  echo 'alert("Something is wrong...");';
+  echo 'if(confirm("Something is wrong...")==true){';
+  echo 'location.href="users.php";}';
   echo '</script>';
 }
 ?>

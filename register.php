@@ -9,6 +9,9 @@
         <title>Register</title>
         <link rel="stylesheet" href="css/register.css">
         <script src="js/app.js" defer></script>
+        <script>
+          <?php include("js/app.js") ?>
+        </script>
     </head>
 </head>
 <body>
