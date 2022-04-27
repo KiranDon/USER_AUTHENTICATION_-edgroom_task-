@@ -14,7 +14,7 @@ if($insertUser){
   echo 'alert("Successfully Registered");';
   echo '</script>';
   echo("yayyyy...");
-  header("Location:login.php");
+  // header("Location:login.php");
 }else{
   echo $insertUser->error;
   echo("Faaaaaaaaaaak");

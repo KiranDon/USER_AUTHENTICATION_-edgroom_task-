@@ -16,9 +16,9 @@
 </head>
 <body>
     <h1>All users</h1>
-    <button type="button" class="btn btn-primary addUser openModal" id="addUser" data-toggle="modal" data-target="#exampleModalCenter">
+    <a href="add.php"><button type="button" class="btn btn-primary addUser openModal" id="addUser" data-toggle="modal" data-target="#exampleModalCenter">
     Add User ➕
-</button>
+</button></a>
 
     <!-- <button class="addUser" id="addUser" >Add User ➕</button> -->
 
