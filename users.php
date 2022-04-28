@@ -10,6 +10,7 @@
     <style>
       <?php include("css/users.css") ?>
     </style>
+    
     <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script> -->
@@ -22,9 +23,13 @@
 
     <!-- <button class="addUser" id="addUser" >Add User ➕</button> -->
 
-    <input type="text" id="searchInput" placeholder="Search by name">
+    <div class="searchInputs">
+      <input type="text" id="searchByName" placeholder="Search by First name">
+      <input type="text" id="searchByEmail" placeholder="Search by Email">
+      <input type="text" id="searchByPhone" placeholder="Search by Phone number">
+    </div>
 
-    <table>
+    <table id="table">
       <tr>
         <th>First Name</th>
         <th>Last Name</th>
@@ -84,6 +89,8 @@
     
 
 
-    
+    <script>
+      <?php include("js/search.js") ?>
+    </script>
 </body>
 </html>

@@ -112,7 +112,7 @@
                         <div class="col-md-6 mb-4 pb-2">
       
                             <div class="form-outline">
-                              <input type="password" id="password" name="password" class="form-control form-control-lg"  required/>
+                              <input type="password" id="password" name="password" class="form-control form-control-lg" required/>
                               <label class="form-label" for="password">Password</label>
                             </div>
           
@@ -131,7 +131,7 @@
                     <div class="mt-1 pt-1">
                       <input type="submit" class="btn btn-primary btn-lg" value="Register" id="register" name="register">
                     </div>
-      
+    
                   </form>
                 </div>
               </div>

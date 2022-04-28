@@ -53,7 +53,7 @@ td, th{
     left: 90%;
     background-color: rgb(49, 241, 24);
     border-radius: 5px;
-    top: 3%;
+    top: 1%;
     padding: 10px;
     font-weight: bold;
     font-size: 18px;
@@ -155,4 +155,18 @@ td, th{
     height: 30px;
     padding: 10px;
     font-size: 15px;
+}
+.searchInputs{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 10px;
+}
+.searchInputs #searchByName, .searchInputs #searchByEmail, .searchInputs #searchByPhone{
+    width: 30%;
+    padding: 4px;
+    border: 2px solid black;
+    border-radius: 20px;
+    margin: 0 10px;
+    font-size: 16px;
 }
