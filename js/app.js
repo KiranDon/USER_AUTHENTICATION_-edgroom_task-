@@ -1,4 +1,4 @@
-// alert("hjvj");
+
 let registerButton = document.getElementById("register");
 let errorMessage = document.getElementById("errorMessage");
 function validate(){
@@ -9,10 +9,7 @@ function validate(){
     let gender = document.querySelector('.genderInput:checked').value;
     let password = document.getElementById("password").value;
     let confirmPassword = document.getElementById("confirmPassword").value;
-    alert(password);
-    alert(typeof(password));
-    console.log(firstName, lastName, phoneNumber, emailAddress, gender, password, confirmPassword)
-
+    
     errorMessage.innerTex = "";
     if(firstName.length<3){
         document.getElementById("errorMessage").classList.remove("hidden");
@@ -51,7 +48,6 @@ function isValidPassword(password){
 }
 
 function isValidPhone(number){
-    // console.log(number)
     if (Number.isInteger(+number) && (number.length==10)){
         return true;
     }
@@ -65,9 +61,8 @@ function isValidEmail(email){
     return false;
 }
 
-// registerButton.addEventListener("click", function(e){
-//     // e.preventDefault();
-//     validate();
-// });
+registerButton.addEventListener("click", function(e){
+    validate();
+});
 
 
