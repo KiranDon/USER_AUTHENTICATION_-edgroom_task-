@@ -30,6 +30,11 @@ table tr:nth-child(odd){
 td, th{
     padding: 10px 0;
 }
+th{
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+    cursor: pointer;
+}
 .editButton{
     border: none;
     outline: none;
@@ -50,10 +55,11 @@ td, th{
     position: absolute;
     border: none;
     outline: none;
-    left: 90%;
+    left: 87%;
     background-color: rgb(49, 241, 24);
     border-radius: 5px;
     top: 1%;
+    width: 150px;
     padding: 10px;
     font-weight: bold;
     font-size: 18px;
@@ -160,7 +166,7 @@ td, th{
     display: flex;
     justify-content: space-between;
     width: 100%;
-    margin-top: 10px;
+    margin-top: 30px;
 }
 .searchInputs #searchByName, .searchInputs #searchByEmail, .searchInputs #searchByPhone{
     width: 30%;

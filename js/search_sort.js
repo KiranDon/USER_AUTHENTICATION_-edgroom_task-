@@ -8,20 +8,20 @@ data.forEach(function(item){
 // console.log(users)
 
 let header = `<tr>
-<th>First Name</th>
-<th>Last Name</th>
-<th>Phone Number</th>
-<th>Email</th>
+<th data-column="firstName" data-order="descending" name="header">First Name</th>
+<th data-column="lastName" data-order="descending" name="header">Last Name</th>
+<th data-column="phoneNumber" data-order="descending" name="header">Phone Number</th>
+<th data-column="emailAddress" data-order="descending" name="header">Email</th>
 <th>Gender</th>
 <th>Password</th>
 <th>Edit</th>
 <th>Delete</th>
 </tr>`;
+let table = document.getElementById('table');
 function buildTable(data)
 {
-    let table = document.getElementById('table');
     table.innerHTML = '';
-    table.innerHTML += header;
+    // table.innerHTML += header;
     if(data.length==0){
         table.innerHTML += `<tr>
         <th>-</th>
@@ -51,8 +51,8 @@ function buildTable(data)
            <td><a href="delete.php?email=${data[i][3]}"><button class="deleteButton" id="deleteButton" name=${data[i][3]}>DELETE ❌</button></a></td>
         </tr>`;
         table.innerHTML += row;
+        // alert("successss");
     }
-    // alert("successss");
 }
 buildTable(users);
 
@@ -63,6 +63,7 @@ const searchByName = document.getElementById('searchByName');
 searchByName.addEventListener('keyup', function(){
     let value = this.value;
     let data = searchTableForFirstName(value, users);
+    console.log(data)
     buildTable(data);
 })
 
@@ -129,3 +130,32 @@ function searchTableForPhone(value, data)
     // console.log(filteredData)
     return filteredData;
 }
+
+
+//sorting
+let headers = document.getElementsByName('header');
+headers.forEach(header => {
+    header.addEventListener('click', (e)=>{
+        // alert("clicked");
+        let column = e.target.attributes[0].textContent;
+        let order = e.target.attributes[1].textContent;
+        // let text = e.path[0].innerHTML;
+        // text = text.substring(0, text.length-1)
+        let feilds = {"firstName":0, "lastName":1, "phoneNumber":2, "emailAddress":3};
+        if(order == 'descending')
+        {
+            e.target.attributes[1].textContent = 'ascending';
+            users = users.sort((a, b) => a[feilds[column]].toLowerCase() > b[feilds[column]].toLowerCase() ? 1 : -1) 
+            // text += '&#9660';
+        }
+        else
+        {
+            e.target.attributes[1].textContent = 'descending';
+            users = users.sort((a, b) => a[column] < b[column] ? 1 : -1)
+            // text += '&#9650';
+        }
+        // e.path[0].innerText=text;
+        buildTable(users);
+        console.log(e)
+    })
+})

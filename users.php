@@ -29,18 +29,18 @@
       <input type="text" id="searchByPhone" placeholder="Search by Phone number">
     </div>
 
-    <table id="table">
+    <table>
       <tr>
-        <th>First Name</th>
-        <th>Last Name</th>
-        <th>Phone Number</th>
-        <th>Email</th>
+        <th data-column="firstName" data-order="descending" name="header">First Name &#x21D5;</th>
+        <th data-column="lastName" data-order="descending" name="header">Last Name &#x21D5;</th>
+        <th data-column="phoneNumber" data-order="descending" name="header">Phone Number &#x21D5;</th>
+        <th data-column="emailAddress" data-order="descending" name="header">Email &#x21D5;</th>
         <th>Gender</th>
         <th>Password</th>
         <th>Edit</th>
         <th>Delete</th>
       </tr>
-
+      <tbody id="table">
       <?php 
                 include ("config.php");
 
@@ -66,7 +66,9 @@
             <?php
                 }
             ?>
+      
 
+      </tbody>
 
       <!-- <tr>
         <td>Usha Kiran</td>
@@ -90,7 +92,7 @@
 
 
     <script>
-      <?php include("js/search.js") ?>
+      <?php include("js/search_sort.js") ?>
     </script>
 </body>
 </html>
