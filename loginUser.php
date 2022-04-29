@@ -33,7 +33,7 @@
         ?>
         <h1>Profile</h1>
   <div class="profileBox">
-    <img src="images/profile_dummy.png" alt="Profile Pic">
+    <img src="uploads/<?php echo $emailAddress; ?>.png" alt="Profile Pic">
         <h2>Hello,&nbsp; <?php echo($user_data['firstName']);?><?php echo($user_data['lastName']);?></h2>
         <button class="adminLogin" id="adminButton"><a href="index.php">Logout</a></button></a>
         <?php
