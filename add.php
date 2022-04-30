@@ -16,7 +16,7 @@
 <div class="modal editModal" id="editModal">
     <!-- <button class="closeButton">&times;</button> -->
     <h2>Add new user.</h2>
-      <form class="modalForm" autocomplete="off" onsubmit="return validate()" action="insert.php" method="POST">
+      <form class="modalForm" autocomplete="off" onsubmit="return validate()" action="insert.php" method="POST" enctype="multipart/form-data">
         <div class="modalRow">
           <label>First Name: </label>
           <input type="text" name="firstName" class="modalInput">
@@ -41,6 +41,14 @@
           <label>Email: </label>
           <input type="email" name="emailAddress" class="modalInput">
         </div>
+        <div class="col-md-6 mb-4 pb-2">
+      
+                        <div class="form-outline">
+                          <input type="file" id="ProfileImage" name="ProfileImage" class="form-control form-control-lg"  required/>
+                          <label class="form-label" for="ProfileImage">Profile Image</label>
+                        </div>
+      
+                      </div>
         <div class="modalRow">
           <button class="modalButton" id="o" type="sumbit">Add</button>
           <button class="modalButton" id="c">Close</button>

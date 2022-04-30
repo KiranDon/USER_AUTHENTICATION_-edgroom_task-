@@ -8,64 +8,20 @@ $emailAddress = $_POST['emailAddress'];
 $gender = $_POST['gender']; 
 $password = $_POST['password'];
 
+
+$file = $_FILES['ProfileImage'];
+$fileName = $_FILES['ProfileImage']['name'];
+$fileExt = explode('.', $fileName);
+$fileActualExt = strtolower(end($fileExt));
+$imageName = $emailAddress.".".$fileActualExt;
+// echo $imageName;
+
 $query = mysqli_query($connection, "select * from users where emailAddress='$emailAddress'");
 $user_data = mysqli_fetch_array($query);
 if($user_data==null){
-  $insertUser = mysqli_query($connection, "insert into users values('$firstName', '$lastName', '$phoneNumber', '$emailAddress', '$gender', '$password')");
+  $insertUser = mysqli_query($connection, "insert into users values('$firstName', '$lastName', '$phoneNumber', '$emailAddress', '$gender', '$password', '$imageName')");
   if($insertUser){
-
-    // image upload starts
-    $file = $_FILES['ProfileImage'];
-
-    $fileName = $_FILES['ProfileImage']['name'];
-    $fileTmpName = $_FILES['ProfileImage']['tmp_name'];
-    $fileSize = $_FILES['ProfileImage']['size'];
-    $fileError = $_FILES['ProfileImage']['error'];
-    $fileType = $_FILES['ProfileImage']['type'];
-
-    $fileExt = explode('.', $fileName);
-    $fileActualExt = strtolower(end($fileExt));
-
-    $allowed = array('jpg', 'jpeg', 'png', 'pdf');
-
-    if(in_array($fileActualExt, $allowed)){
-      if($fileError===0){
-        if($fileSize < 2049000){
-          $fileNameNew = $emailAddress.".".$fileActualExt;
-          $fileDestination = 'uploads/'.$fileNameNew;
-          move_uploaded_file($fileTmpName, $fileDestination);
-
-          // success
-          echo '<script language="javascript">';
-          echo 'if(confirm("Image uploaded successfully...")==true){';
-          // echo 'location.href="register.php";}';
-          echo '</script>'; 
-
-        }else{
-          echo '<script language="javascript">';
-          echo 'if(confirm("File Size if too big...")==true){';
-          echo 'location.href="register.php";}';
-          echo '</script>'; 
-        }
-      }else{
-        echo '<script language="javascript">';
-        echo 'if(confirm("There was an error uploading your file...")==true){';
-        echo 'location.href="register.php";}';
-        echo '</script>'; 
-      }
-
-    }else{
-      echo '<script language="javascript">';
-      echo 'if(confirm("You cannot upload files of this type...")==true){';
-      echo 'location.href="register.php";}';
-      echo '</script>'; 
-    }
-
-
-
-    // image upload ends
-
-
+    // send mail
     ini_set("SMTP", "smtpout.secureserver.net");//confirm smtp
     $to = $emailAddress;
     $subject = "Registration successful.";
@@ -76,25 +32,67 @@ if($user_data==null){
     $headers .= "Content-type: text/html\n";
 
     mail($to,$subject,$message,$headers);
-    // mail
+    // // mail
+
+        // image upload starts
+        $file = $_FILES['ProfileImage'];
+
+        $fileName = $_FILES['ProfileImage']['name'];
+        $fileTmpName = $_FILES['ProfileImage']['tmp_name'];
+        $fileSize = $_FILES['ProfileImage']['size'];
+        $fileError = $_FILES['ProfileImage']['error'];
+        $fileType = $_FILES['ProfileImage']['type'];
+    
+        $fileExt = explode('.', $fileName);
+        $fileActualExt = strtolower(end($fileExt));
+    
+        $allowed = array('jpg', 'jpeg', 'png', 'pdf');
+    
+        if(in_array($fileActualExt, $allowed)){
+          if($fileError===0){
+            if($fileSize < 209715200){
+              $fileNameNew = $emailAddress.".".$fileActualExt;
+              $imageName = $fileNameNew;
+              $fileDestination = 'uploads/'.$fileNameNew;
+              move_uploaded_file($fileTmpName, $fileDestination);
+    
+              // success
+              echo '<script language="javascript">';
+              echo 'if(confirm("Image uploaded successfully...")==true){';
+              // echo 'location.href="register.php";}';
+              echo '</script>'; 
+    
+            }else{
+              echo '<script language="javascript">';
+              echo 'if(confirm("File Size if too big...")==true){';
+              echo 'location.href="register.php";}';
+              echo '</script>'; 
+            }
+          }else{
+            echo '<script language="javascript">';
+            echo 'if(confirm("There was an error uploading your file...")==true){';
+            echo 'location.href="register.php";}';
+            echo '</script>'; 
+          }
+    
+        }else{
+          echo '<script language="javascript">';
+          echo 'if(confirm("You cannot upload files of this type...")==true){';
+          echo 'location.href="register.php";}';
+          echo '</script>'; 
+        }
+        // image upload ends
 
     echo '<script language="javascript">';
     echo 'if(confirm("Registration Successful...")==true){';
     echo 'location.href="login.php";}';
     echo '</script>';
-    // echo("yayyyy...");
-    // usleep(3000000);
-    // header("Location:login.php");
   }else{
-    // echo $insertUser->error;
-    // echo("Faaaaaaaaaaak");
-    // echo '<script language="javascript">';
-    // echo 'alert("Something is wrong...");';
-    // echo '</script>';
     echo '<script language="javascript">';
     echo 'if(confirm("Something is wrong...")==true){';
     echo 'location.href="register.php";}';
     echo '</script>';
+    
   }
 }else{
   echo '<script language="javascript">';
@@ -102,6 +100,8 @@ if($user_data==null){
   echo 'location.href="register.php";}';
   echo '</script>';
 }
+
+
 
 
 ?>
