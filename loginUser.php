@@ -6,6 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Profile</title>
   <link rel="stylesheet" href="css/profile.css">
+  <style>
+    include ("css/profile.css");
+  </style>
 </head>
 <body>
   
@@ -33,7 +36,7 @@
         ?>
         <h1>Profile</h1>
   <div class="profileBox">
-    <img src="uploads/<?php echo $emailAddress; ?>.png" alt="Profile Pic">
+    <img src="uploads/<?php echo $user_data['imageName']; ?>" alt="Profile Pic">
         <h2>Hello,&nbsp; <?php echo($user_data['firstName']);?><?php echo($user_data['lastName']);?></h2>
         <button class="adminLogin" id="adminButton"><a href="index.php">Logout</a></button></a>
         <?php

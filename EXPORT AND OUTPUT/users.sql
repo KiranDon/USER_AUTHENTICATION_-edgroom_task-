@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 24, 2022 at 06:22 PM
+-- Generation Time: Apr 30, 2022 at 08:15 AM
 -- Server version: 8.0.25
 -- PHP Version: 8.0.10
 
@@ -33,26 +33,18 @@ CREATE TABLE `users` (
   `phoneNumber` varchar(10) DEFAULT NULL,
   `emailAddress` varchar(30) DEFAULT NULL,
   `gender` varchar(10) DEFAULT NULL,
-  `password` varchar(30) DEFAULT NULL
+  `password` varchar(30) DEFAULT NULL,
+  `imageName` varchar(30) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`firstName`, `lastName`, `phoneNumber`, `emailAddress`, `gender`, `password`) VALUES
-('nikhil', 'sharma', '9398581988', 'nikhil@gmail.com', 'Female', 'nikki'),
-('tharun', 'ampolu', '9393929392', 'tharun@gmail.com', 'Male', 'yk'),
-('usha', 'kiran', '9182245303', 'kiran@gmail.com', 'Male', 'kiki'),
-('random', 'baba', '9999999999', 'jjj@gmail.com', 'Male', 'kikm'),
-('random', 'baba', '9999999999', 'jjj@gmail.com', 'Male', 'kikm'),
-('jack', 'don', '9191919191', 'jack@gmail.com', 'Male', 'jack'),
-('samantha', 'sam', '8989676756', 'samii@gmail.com', 'Female', 'ukukio'),
-('jack', 'jack', '0000000000', 'jackjack@gmail.com', 'Female', 'jack'),
-('kjhas', 'askjf', '9821948', 'sd@sf.ad', 'Male', 'ss'),
-('Prabhas', 'Uppalapati', '9090786756', 'prabhas@gmail.com', 'Male', 'darling'),
-('rambabu', 'room', '8888888888', 'rambabu@gmail.com', 'Male', 'ram'),
-('Jayanth', ' Friend', '8292839289', 'jayanth@gmail.com', 'Male', 'jayanth');
+INSERT INTO `users` (`firstName`, `lastName`, `phoneNumber`, `emailAddress`, `gender`, `password`, `imageName`) VALUES
+('Nikhil ', 'Sarma', '9398581988', 'sarmanikhil76@gmail.com', 'Male', 'K!r@nD0n', 'sarmanikhil76@gmail.com.jpg'),
+('Tharun ', 'Kumar', '7013142413', 'tharunampolu9.8@gmail.com', 'Male', 'Tharun@369', ''),
+('Chandra', ' Mouli', '9898989898', 'cmchandra170581@gmail.com', 'Male', 'Tharun@369', 'cmchandra170581@gmail.com.jpg');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
